@@ -1,0 +1,147 @@
+.books {
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 75px;
+
+    @media screen and (max-width: 1120px) and (orientation: landscape) {
+        column-gap: 30px;
+    }
+
+    @media screen and (max-width: 1120px) and (orientation: portrait) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.book {
+    width: 424px;
+    display: flex;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 95px;
+    align-items: center;
+
+    @media screen and (max-width: 1120px) {
+        width: 100%;
+    }
+
+    &-cover {
+        width: 212px;
+        height: 300px;
+        margin-right: 36px;
+        box-shadow: 0 24px 36px #EEECEC;
+
+        @media screen and (max-width: 1120px) {
+            width: fit-content;
+            height: fit-content;
+        }
+    }
+
+    &-info {
+        width: 176px;
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 400;
+        font-size: 10px;
+        line-height: 14px;
+        text-transform: capitalize;
+        color: $secondary-text-color;
+
+        @media screen and (max-width: 1120px) and (orientation: landscape) {
+            width: 120px;
+        }
+    }
+
+    &-authors {
+        margin-bottom: 4px;
+    }
+
+    &-title {
+        font-family: Montserrat, sans-serif;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 20px;
+        color: $base-text-color;
+        margin-bottom: 4px;
+    }
+
+    &-rating {
+        display: flex;
+        align-items: baseline;
+
+        .stars {
+            height: 12px;
+            margin-right: 6px;
+        }
+
+        .reviews {
+            text-transform: lowercase;
+        }
+    }
+
+    &-description {
+        margin-top: 16px;
+        margin-bottom: 16px;
+        max-height: 42px;
+        overflow: hidden;
+        position: relative;
+        text-align: justify;
+        margin-right: -1em;
+        padding-right: 1em;
+
+        &::before {
+            content: '...';
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            width: 1em;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            width: 1em;
+            height: 1em;
+            margin-top: 0.2em;
+            background-color: inherit;
+        }
+    }
+
+    &-price {
+        font-family: Montserrat, sans-serif;
+        font-weight: 700;
+        font-size: 13px;
+        line-height: 16px;
+        text-transform: uppercase;
+        color: $base-text-color;
+        margin-bottom: 16px;
+    }
+
+    &-btn {
+        width: 100%;
+        height: 45px;
+        font-weight: 700;
+        font-size: 8px;
+        line-height: 10px;
+        text-transform: uppercase;
+        transition: 0.3s;
+
+        &.in-the-cart {
+            color: $secondary-text-color;
+            border: 1px solid $book-inactive;
+        }
+
+        &.to-buy {
+            color: $button-to-buy;
+            border: 1px solid $button-to-buy;
+        }
+    }
+}
+
+.load-btn {
+    width: 176px;
+    display: none;
+    margin: 0 auto;
+}

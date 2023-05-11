@@ -1,0 +1,23 @@
+section.header-section
+    .container
+        header.header
+            a.logo(href='#') Bookshop
+            nav.menu 
+                ul.menu-list
+                    li 
+                        a.menu-link.active(href="#") books
+                    li 
+                        a.menu-link(href="#") audiobooks
+                    li 
+                        a.menu-link(href="#") Stationery & gifts
+                    li 
+                        a.menu-link(href="#") blog
+            .icons
+                button(disabled)
+                    img(src=require("Svg/user.svg"), alt="user")
+                button(disabled)
+                    img(src=require("Svg/search.svg"), alt="search")
+                .cart
+                    button(disabled)
+                        img(src=require("Svg/shop bag.svg"), alt="shop bag")
+                    .cart-badge

@@ -1,0 +1,29 @@
+@import 'reset';
+@import 'variables';
+@import 'header';
+@import 'slider';
+@import 'categories';
+@import 'books';
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #FFF;
+    font-family: Montserrat, sans-serif;
+}
+
+.container {
+    max-width: 1120px;
+    margin: 0 auto;
+
+    @media screen and (max-width: 1120px) {
+        max-width: 95%;
+    }
+}
+
+button {
+    cursor: pointer;
+    font-family: Montserrat, sans-serif;
+}

@@ -1,0 +1,77 @@
+.books-cont {
+    position: relative;
+    padding-bottom: 74px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-left: 200px;
+    padding-top: 46px;
+
+    @media screen and (max-width: 1120px) {
+        padding-left: 0;
+    }
+}
+
+.categories-list {
+    position: absolute;
+    left: -160px;
+    top: 0;
+    width: 416px;
+    height: 710px;
+    background-color: $inactive;
+    padding-top: 45px;
+    padding-left: 160px;
+
+    @media screen and (max-width: 1120px){
+        position: static;
+        display: block;
+        margin: 0 auto;
+        max-height: 150px;
+        width: 100%;
+        text-align: center;
+        overflow: scroll;
+        padding-top: 20px;
+        padding-left: 20px;
+        margin-bottom: 40px;
+    }
+}
+
+.category {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    text-transform: capitalize;
+    margin-bottom: 23px;
+    color: $secondary-text-color;
+    transition: 0.3s;
+
+    &.active {
+        color: $base-text-color;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 20px;
+        position: relative;
+
+        &::before {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background-color: $list-marker;
+            content: "";
+            display: inline-block;
+            position: absolute;
+            left: -14px;
+            top: 7px;
+        }
+
+        &:hover {
+            font-size: 16px;
+        }
+    }
+
+    &:hover {
+        color: $base-text-color;
+        font-weight: 700;
+        font-size: 14px;
+    }
+}

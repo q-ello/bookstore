@@ -1,0 +1,23 @@
+mixin buyBtn(id, inTheCart) 
+    if (inTheCart) 
+        button.book-btn.in-the-cart(id=id) in the cart
+    else 
+        button.book-btn.to-buy(id=id) buy now
+
+
+
+.book
+    img.book-cover(src=cover alt='cover')
+    .book-info 
+        .book-authors #{authors}
+        .book-title #{title}
+        if (rating)
+            .book-rating 
+                .stars
+                    each star in [1, 2, 3, 4, 5]
+                        img(src=require(`Svg/star-${star < Math.round(rating) ? 'on' : 'off'}.svg`))
+                .reviews #{reviews} review
+        p.book-description #{description}
+        if (price)
+            .book-price #{price} &#8381;
+        +buyBtn(id, inTheCart)

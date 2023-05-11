@@ -1,0 +1,15 @@
+doctype html
+html(lang="en")
+  head
+    title bookshop
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    link(rel="preconnect" href="https://fonts.googleapis.com")
+    link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
+    link(href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;900&family=Open+Sans&display=swap" rel="stylesheet")
+    link(href=require('styles/style.scss') rel='stylesheet')
+  body
+    include Modules/header.pug
+    main 
+      include Modules/slider.pug
+      include Modules/books-cont.pug
+      script(src=require('./main.js') defer='defer')
